@@ -1,19 +1,19 @@
-# Web Components, un nuevo estándar para el desarrollo de aplicaciones HTML5 
-## Consideraciones para su implementación
+# Web Components, un nuevo estándar para el desarrollo de aplicaciones HTML5  
+# Consideraciones para su implementación
 
 Tesina de grado, julio 2015
 
-**Autor**
-Federico González Brizzio
-fedegonzal@gmail.com
+**Autor**  
+Federico González Brizzio  
+fedegonzal@gmail.com  
 [@fedegonzal]
 
-**Director**
+**Director**  
 Lic. Guillermo Feierherd 
 
-Universidad Nacional de la Patagonia, San Juan Bosco
-Facultad de Ingeniería – Ushuaia
-Tierra del Fuego, Argentina 
+Universidad Nacional de la Patagonia, San Juan Bosco  
+Facultad de Ingeniería – Ushuaia  
+Tierra del Fuego, Argentina
 
 ## Objetivos del trabajo
 
@@ -26,6 +26,12 @@ Analizar las condiciones de compatibilidad de los principales Browsers de la act
 Generar una serie de recomendaciones que resuman las buenas prácticas para incorporar Web Components en lo inmediato.
 
 Desarrollar cinco Web Components que quedarán publicados mediante licencia Open Source dentro de un repositorio público en Internet.
+
+## Cómo utilizar los ejemplos
+
+1. Descargar o clonar este repositorio
+2. Iniciar un servidor http (puede funcionar cualquiera)
+3. Navegar los ejemplos
 
 [@fedegonzal]:https://twitter.com/fedegonzal
 [fedegonzal@gmail.com]:mailto://fedegonzal@gmail.com
