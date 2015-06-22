@@ -1,0 +1,41 @@
+<template>
+  <style>
+  	figure { 
+      display: block;
+	  margin: 15px;
+	}
+	p {
+	  font-family: arial, helvetica, sans-serif;
+	  font-size: 12pt;
+	  color: gray;
+	  line-height: 1.2em;
+	  margin: 0;
+	}
+  </style>
+
+  <figure>
+  	<img param="url" src="http://dummyimage.com/300/cccccc/fff" height="175">
+    <p param="caption"></p>
+  </figure>
+</template>
+
+<script>
+  (function() {
+    var importDoc = document.currentScript.ownerDocument;
+    var proto = Object.create(HTMLElement.prototype);
+    proto.createdCallback = function() {
+      var template = importDoc.querySelector('template');
+  
+      // Aplicamos los parámetros recibidos
+      template.content.querySelector('[param=url]').src = this.getAttribute('url');
+      template.content.querySelector('[param=caption]').textContent = this.getAttribute('caption');
+  
+      var clone = document.importNode(template.content, true);
+      var root = this.createShadowRoot();
+      root.appendChild(clone);
+    };
+    document.registerElement('my-image', {
+      prototype: proto
+    });
+  })();
+</script>

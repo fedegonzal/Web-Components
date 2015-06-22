@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Cómo incluir elementos complejos: nativos, propios o de terceros</title>
+
+	<!-- Polyfill Web Components support for older browsers -->
+	<script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+
+	<!-- Import element -->
+	<link rel="import" href="bower_components/especie-item/especie-item-complejo.html">
+
+	<style>
+		especie-item-complejo {
+		  display: inline-block;
+		  width: 470px;
+		}
+	</style>
+</head>
+<body>
+
+    <especie-item-complejo spname="Campephilus magellanicus" url="fotos/campephilus-magellanicus.jpg"> 
+        <p>Carpintero gigante, Carpintero patagónico</p>
+        <p>King, 1828</p>
+        <p>Autóctono</p>
+    </especie-item-complejo>
+
+    <especie-item-complejo spname="Priodontes maximus" url="fotos/priodontes-maximus.jpg"> 
+        <p>Tatú carreta, tatú-guazú, Giant Armadillo</p>
+        <p>Kerr, 1792</p>
+        <p>Autóctono</p>
+    </especie-item-complejo>
+
+    <especie-item-complejo spname="Tapirus terrestris" url="fotos/tapirus-terrestris.jpg"> 
+        <p>Tapir, Anta</p>
+        <p>Linnaeus, 1758</p>
+        <p>Autóctono</p>
+    </especie-item-complejo>
+
+    <especie-item-complejo spname="Campephilus magellanicus" url="fotos/campephilus-magellanicus.jpg"> 
+        <p>Carpintero gigante, Carpintero patagónico</p>
+        <p>King, 1828</p>
+        <p>Autóctono</p>
+    </especie-item-complejo>
+
+    <especie-item-complejo spname="Priodontes maximus" url="fotos/priodontes-maximus.jpg"> 
+        <p>Tatú carreta, tatú-guazú, Giant Armadillo</p>
+        <p>Kerr, 1792</p>
+        <p>Autóctono</p>
+    </especie-item-complejo>
+
+    <especie-item-complejo spname="Tapirus terrestris" url="fotos/tapirus-terrestris.jpg"> 
+        <p>Tapir, Anta</p>
+        <p>Linnaeus, 1758</p>
+        <p>Autóctono</p>
+    </especie-item-complejo>
+
+</body>
+</html>

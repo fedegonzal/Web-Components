@@ -1,0 +1,26 @@
+[
+	{
+		"spname": "Campephilus magellanicus",
+		"localnames": "Carpintero gigante, Carpintero patagónico",
+		"image": "fotos/campephilus-magellanicus.jpg",
+		"author": "King",
+		"year": "1828",
+		"origin": "Autóctono"
+	},
+	{
+		"spname": "Priodontes maximus",
+		"localnames": "Tatú carreta, tatú-guazú, Giant Armadillo",
+		"image": "fotos/priodontes-maximus.jpg",
+		"author": "Kerr",
+		"year": "1792",
+		"origin": "Autóctono"
+	},
+	{
+		"spname": "Tapirus terrestris",
+		"localnames": "Tapir, Anta",
+		"image": "fotos/tapirus-terrestris.jpg",
+		"author": "Linnaeus",
+		"year": "1758",
+		"origin": "Autóctono"
+	}
+]

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Cómo incluir elementos complejos: nativos, propios o de terceros</title>
+
+	<!-- Polyfill Web Components support for older browsers -->
+	<script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+
+	<!-- Import element -->
+	<link rel="import" href="bower_components/especie-lista/especie-lista.html">
+
+	<style>
+		especie-item-complejo {
+		  display: inline-block;
+		  width: 470px;
+		}
+	</style>
+</head>
+<body>
+
+    <especie-lista src="data/species.json"></especie-lista>
+
+</body>
+</html>

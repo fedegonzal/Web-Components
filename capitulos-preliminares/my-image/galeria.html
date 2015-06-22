@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Galería de imágenes</title>
+	<link rel="import" href="my-image.html">
+	<style>
+		my-image { display: inline-block; }
+		p {
+		  font-family: "Times New Roman", Georgia, Serif;
+		  font-size: 18pt;
+		  color: white;
+		  line-height: 1.4em;
+		  margin: 15px;
+		}
+		
+		header { margin: 15px; padding: 15px; background-color: #EC552F; }
+		section { text-align: center; }
+		h1 { color: white; font-weight: normal; margin: 15px; }
+	</style>
+</head>
+<body>
+
+	<header>
+	<h1>Galería de imágenes con Web Component y Shadow DOM</h1>
+	<p>El ejemplo demuestra cómo pueden aislarse definiciones CSS mediante el uso de Web Components encapsulados con Shadow DOM.</p>
+	</header>
+
+	<section>
+	  	<my-image url="images/imagen01.jpg" caption="Aerosilla del Glaciar Le Martial"></my-image>
+	  	<my-image url="images/imagen02.jpg" caption="Bahía de Ushuaia, Canal de Beagle"></my-image>
+	  	<my-image url="images/imagen03.jpg" caption="Sendero de ingreso a Hotel"></my-image>
+	  	<my-image url="images/imagen04.jpg" caption="Bahía Encerrada congelada"></my-image>
+	  	<my-image url="images/imagen05.jpg" caption="Cumbre en el Cerro Castor"></my-image>
+	  	<my-image url="images/imagen06.jpg" caption="Postales de Ushuaia"></my-image>
+	</section>
+
+</body>
+</html>

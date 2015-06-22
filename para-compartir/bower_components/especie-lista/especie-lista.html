@@ -1,0 +1,27 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../especie-item/especie-item-complejo.html">
+<link rel="import" href="../iron-ajax/iron-ajax.html">
+
+<dom-module id="especie-lista">
+	<template>
+		<iron-ajax url="{{src}}" last-response="{{data}}" auto></iron-ajax>
+
+	    <template is="dom-repeat" items="{{data}}">
+		    <especie-item-complejo spname="{{item.spname}}" url="{{item.image}}"> 
+		        <p>{{item.localnames}}</p>
+		        <p><span>{{item.author}}</span>, <span>{{item.year}}</span></p>
+		        <p>{{item.origin}}</p>
+		    </especie-item-complejo>
+	    </template>
+	</template>
+</dom-module>
+
+<script>
+Polymer({
+  	is: "especie-lista",
+
+    properties: {
+      src: { type: String }
+  	}
+});
+</script>

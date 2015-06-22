@@ -1,0 +1,51 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="especie-item-complejo">
+	<style>
+		article {
+			font-family: arial, helvetica, sans-serif;
+			font-size: 10pt;
+			line-height: 1.2em;			
+			max-width: 450px;
+			background-color: white;
+			border-right: 4px solid #ccc;
+			border-bottom: 4px solid #ccc;
+			border-left: 1px solid #cecece;
+			border-top: 1px solid #cecece;
+			margin: 15px;
+		}
+		.clearfix {
+			display: block;
+			clear: both;
+			float: none;
+		}
+		.picture {
+			float: left;
+		}
+		.abstract {
+			float: left;
+			padding: 15px;
+		}		
+	</style>
+	<template>
+		<article>
+			<img class="picture" src="{{url}}">
+			<div class="abstract">
+				<h2><em><span>{{spname}}</span></em></h2>
+				<content></content>
+			</div>
+			<div class="clearfix"></div>
+		</article>
+	</template>
+</dom-module>
+
+<script>
+Polymer({
+  	is: "especie-item-complejo",
+
+    properties: {
+      spname: { type: String, value: "Nombre científico" },
+      url: { type: String }
+  	}
+});
+</script>

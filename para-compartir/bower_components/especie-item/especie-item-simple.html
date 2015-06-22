@@ -1,0 +1,26 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="especie-item-simple">
+	<template>
+		<article>
+			<h2>Nombre científico: <em><span>{{spname}}</span></em></h2>
+			<p>Nombres locales: <span>{{localnames}}</span></p>
+			<p>Autor: <span>{{author}}</span>, <span>{{year}}</span></p>
+			<p>Origen: <span>{{origin}}</span></p>
+		</article>
+	</template>
+</dom-module>
+
+<script>
+Polymer({
+  	is: "especie-item-simple",
+
+    properties: {
+      spname: { type: String, value: "Nombre científico" },
+      localnames: { type: String, value: "Nombres locales" },
+      author: { type: String, value: "Autor" },
+      year: { type: String, value: "Año" },
+      origin: { type: String, value: "Origen" }
+  	}
+});
+</script>

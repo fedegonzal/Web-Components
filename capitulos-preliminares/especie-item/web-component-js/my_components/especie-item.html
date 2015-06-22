@@ -1,0 +1,49 @@
+<template>
+  <article>
+    <h2>Nombre científico: <em param="spName">Scientific Name</em></h2>
+    <p>Nombres locales: <span param="localNames">Local names</span></p>
+    <p>Autor: <span param="author">Author</span>, <span param="year">Year</span></p>
+    <p>Origen: <span param="origin">Native</span></p>
+  </article>
+</template>
+
+<script>
+// Obtenemos el DOM de la página que está cargando al Web Component // similar a this.super() en objetos
+var ownerDocument = document._currentScript ? 
+    document._currentScript.ownerDocument : document.currentScript.ownerDocument;
+
+document.registerElement('especie-item', {
+  prototype: Object.create(
+    HTMLElement.prototype, {
+    createdCallback: { value: function() {
+
+      var template = ownerDocument.querySelector('template');
+      this.appendChild(template.content.cloneNode(true));
+      
+      // Aquí se reciben y procesan los parámetros recibidos
+      template.content.querySelector("[param=spName]").innerHTML = this.getAttribute("spName") 
+        || template.content.querySelector("[param=spName]").innerHTML;
+
+      template.content.querySelector("[param=localNames]").innerHTML = this.getAttribute("localNames") 
+        || template.content.querySelector("[param=localNames]").innerHTML;
+
+      template.content.querySelector("[param=author]").innerHTML = this.getAttribute("author") 
+        || template.content.querySelector("[param=author]").innerHTML;
+
+      template.content.querySelector("[param=year]").innerHTML = this.getAttribute("year") 
+        || template.content.querySelector("[param=year]").innerHTML;
+
+      template.content.querySelector("[param=origin]").innerHTML = this.getAttribute("origin") 
+        || template.content.querySelector("[param=origin]").innerHTML;
+
+    }}, // createdCallback
+
+    attributeChangedCallback: { value: function(name, previousValue, value) {
+      console.log(name);
+      console.log(previousValue);
+      console.log(value);
+    }} // attributeChangedCallback
+
+  }) // prototype
+}); // registerElement
+</script>

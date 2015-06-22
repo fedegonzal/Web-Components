@@ -1,0 +1,78 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-signals/iron-signals.html">
+<link rel="import" href="../iron-ajax/iron-ajax.html">
+<link rel="import" href="../paper-material/paper-material.html">
+
+<dom-module id="imagenes-google">
+	<style>
+		.component-container {
+			text-align: center;
+		}
+
+		paper-material {
+			display: inline-block;
+			background: white;
+			box-sizing: border-box;
+			margin: 15px;
+			padding: 15px;
+			border-radius: 2px;
+			width: 250px;
+			height: 250px;
+			overflow: hidden;
+		}
+
+		paper-material img {
+			width: 100%;
+		}
+
+		paper-material p {
+			font-size: 14px;
+			font-family: arial, helvetica, sans-serif;
+			line-height: 1.4em;
+			text-transform: uppercase;
+			color: gray;
+			font-weight: bold;
+		}
+    </style>
+
+	<template>
+		<iron-signals on-iron-signal-new-location="newLocation">
+
+		<iron-ajax id="images" last-response="{{data}}" 
+			url="http://crossorigin.me/https://ajax.googleapis.com/ajax/services/search/images">
+		</iron-ajax>
+
+		<div class="component-container">
+		    <template is="dom-repeat" items="{{data.responseData.results}}">
+		    	<paper-material>
+		    		<img src="{{item.url}}" alt="{{item.contentNoFormatting}}">
+		    		<p>{{item.contentNoFormatting}}</p>
+		    	</paper-material>
+		    </template>
+		</div>
+	</template>
+</dom-module>
+
+<script>
+
+Polymer({
+  	is: "imagenes-google",
+
+    properties: {
+       location: { type: String }
+  	},
+
+  	newLocation: function(event, detail, sender) {
+  		var params = {
+  			"q": detail.place,
+  			"v": "1.0",
+  			"key": "AIzaSyA0fI_USpH-X0ev2tk-heuLGKBlruthp04",
+  			"rsz": 8,
+  			"imgsz": "medium"
+  		};
+
+  		this.$.images.params = params;
+  		this.$.images.generateRequest();
+  	}
+});
+</script>

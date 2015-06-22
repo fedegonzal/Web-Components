@@ -1,0 +1,31 @@
+<template>
+    <article>
+        <h2>Nombre científico: <em id="spName">Scientific Name</em></h2>
+        <p>Nombres locales: <span id="localNames">Local names</span></p>
+        <p>Autor: <span id="author">Author</span>, <span id="year">Year</span></p>
+        <p>Origen: <span id="origin">Native</span></p>
+    </article>
+</template>
+
+<script>
+	(function() {
+		var importDoc = document.currentScript.ownerDocument;
+		var proto = Object.create(HTMLElement.prototype);
+		proto.createdCallback = function() {
+	      	var template = importDoc.querySelector('template');
+	      	
+	      	// Aplicamos los parámetros recibidos
+	      	template.content.querySelector('#spName').textContent = this.getAttribute('spName');
+	      	template.content.querySelector('#localNames').textContent = this.getAttribute('localNames');
+	      	template.content.querySelector('#author').textContent = this.getAttribute('author');
+	      	template.content.querySelector('#year').textContent = this.getAttribute('year');
+	      	template.content.querySelector('#origin').textContent = this.getAttribute('origin');
+
+			var clone = document.importNode(template.content, true);
+			var root = this.createShadowRoot();
+	      	root.appendChild(clone);
+	    };
+	    
+		document.registerElement('especie-item', {prototype: proto});
+	})();
+</script>

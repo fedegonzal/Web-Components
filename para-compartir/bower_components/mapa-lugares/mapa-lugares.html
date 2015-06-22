@@ -1,0 +1,94 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-signals/iron-signals.html">
+<link rel="import" href="../google-map/google-map.html">
+
+<dom-module id="mapa-lugares">
+	<style>
+		.component-container {
+			width: 100%; 
+			min-height: 300px; 
+			height: 100%;
+		}
+		google-map {
+			z-index: 1;
+			width: 100%; 
+			min-height: 300px; 
+		}
+		input {
+			position: absolute;
+			top: 1em;
+			left: 1em;
+			z-index: 2;
+			font-size: 16px;
+			line-height: 1.5em;
+			padding: 0.5em;
+			width: 250px;
+			box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+			border: 2px solid #ccc;
+		}
+	</style>
+
+	<template>
+		<div class="component-container">
+			<input id="domicilio" on-keypress="setLatLng" placeholder="Escribí un domicilio, ciudad o lugar">
+
+			<google-map id="map" latitude="{{latitude}}" longitude="{{longitude}}" zoom="15" disable-default-ui>
+				<google-map-marker id="marker" latitude="{{latitude}}" longitude="{{longitude}}" 
+					on-google-map-marker-mouseup="markerMoved" draggable="true" mouse-events="true">
+				</google-map-marker>
+			</google-map>
+
+			<input name="latitude" type="hidden" value="{{latitude}}">
+			<input name="longitude" type="hidden" value="{{longitude}}">
+
+			<iron-signals on-iron-signal-new-location="newLocation">
+		</div>
+	</template>
+</dom-module>
+
+<script>
+
+Polymer({
+  	is: "mapa-lugares",
+
+    properties: {
+       latitude: { type: Number },
+       longitude: { type: Number }
+  	},
+
+  	setLatLng: function(event) {
+
+	    if(event.keyCode == 13) {
+	    	var me = this;
+	    	var theAddress = this.$.domicilio.value;
+			var geocoder = new google.maps.Geocoder();
+			geocoder.geocode( { 'address': theAddress }, function(results, status) {
+				if (status == google.maps.GeocoderStatus.OK) {
+					var newLocation = {
+						location: results[0].geometry.location,
+						place: theAddress
+					};
+					me.fire('iron-signal', { name: "new-location", data: newLocation });
+				}  
+			}); 
+	    }
+  	},
+
+  	newLocation: function(event, detail, sender) {
+  		var map = this.$.map.map;
+  		var marker = this.$.marker.marker;
+
+ 		map.setCenter(detail.location);
+		marker.setPosition(detail.location);
+
+		console.log("Latitud: " + detail.location.lat());
+		console.log("Longitud: " + detail.location.lng());
+  	},
+
+  	markerMoved: function(event) {
+  		var marker = this.$.marker.marker;
+  		var detail = { "location":  marker.getPosition() };
+  		this.newLocation(event, detail, marker);
+  	}
+});
+</script>

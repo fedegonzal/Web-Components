@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Cómo articular datos entre componentes</title>
+
+	<!-- Polyfill Web Components support for older browsers -->
+	<script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+
+	<!-- Import element -->
+	<link rel="import" href="bower_components/mapa-lugares/mapa-lugares.html">
+
+	<style>
+		html, body { margin: 0; padding: 0; height: 100%; }
+		mapa-lugares { display: block; height: 100%; }
+	</style>
+</head>
+<body>
+
+    <mapa-lugares></mapa-lugares>
+
+</body>
+</html>

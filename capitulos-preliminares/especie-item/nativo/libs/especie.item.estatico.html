@@ -1,0 +1,24 @@
+<template>
+    <article>
+        <h2>Nombre científico: <em>Gastrotheca gracilis</em></h2>
+        <p>Nombres locales: Rana marsupial tucumana, La Banderita, Marsupial Frog</p>
+        <p>Autor: Laurent, 1969</p>
+        <p>Origen: Autóctono</p>
+    </article>
+</template>
+
+<script>
+	(function() {
+		var importDoc = document.currentScript.ownerDocument;
+
+		var proto = Object.create(HTMLElement.prototype);
+		proto.createdCallback = function() {
+	      	var template = importDoc.querySelector('template');
+			var clone = document.importNode(template.content, true);
+			var root = this.createShadowRoot();
+	      	root.appendChild(clone);
+	    };
+	    
+		document.registerElement('especie-item', {prototype: proto});
+	})();
+</script>
