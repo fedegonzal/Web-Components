@@ -26,6 +26,14 @@ Generar una serie de recomendaciones que resuman las buenas prácticas para inco
 
 Desarrollar cinco Web Components que quedarán publicados mediante licencia Open Source dentro de un repositorio público en Internet.
 
+## Cómo descargar el documento
+
+La tesina completa está publicada en formato docx y pdf. El primero facilita su edición, el segundo su lectura o impresión.
+
+Versión docx: https://github.com/fedegonzal/Web-Components/raw/master/Tesina%20Federico%20Gonz%C3%A1lez%20-%20Web%20Components.docx
+
+Versión pdf: https://github.com/fedegonzal/Web-Components/raw/master/Tesina%20Federico%20Gonz%C3%A1lez%20-%20Web%20Components.pdf
+
 ## Cómo utilizar los ejemplos
 
 1. Descargar o clonar este repositorio
