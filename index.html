@@ -19,7 +19,7 @@
 
         <header>
           <h1>Web Components</h1>
-          <h2>Web Components, un nuevo estándar para el desarrollo de aplicaciones HTML5. Consideraciones para su implementación</h2>
+          <h2>Un nuevo estándar para el desarrollo de aplicaciones HTML5. Consideraciones para su implementación</h2>
         </header>
 
         <section id="downloads" class="clearfix">
@@ -78,32 +78,45 @@ Autor: Laurent, 1969<br>
 Origen: Autóctono  </p>
 
 <p>El Web Component recibirá la información para nombre científico, nombres locales, autor, año y origen como atributos del elemento creado. Se generará una instancia del Web Component por cada especie animal que se quiera mostrar.<br>
-<a href="http://cdn.rawgit.com/fedegonzal/Web-Components/master/para-compartir/como-recibir-parametros.html">http://cdn.rawgit.com/fedegonzal/Web-Components/master/para-compartir/como-recibir-parametros.html</a></p>
+<a href="http://rawgit.com/fedegonzal/Web-Components/master/para-compartir/como-recibir-parametros.html">http://rawgit.com/fedegonzal/Web-Components/master/para-compartir/como-recibir-parametros.html</a></p>
 
 <p><strong>Ejemplo 2. Cómo incluir elementos complejos</strong></p>
 
 <p>En esta sección se hará una ligera modificación al ejemplo anterior, suponiendo que es de interés dar mayor flexibilidad a la información contenida en la ficha de especie. En vez de pasar todo el contenido en parámetros, se dejará la libertad de incorporar otros elementos dentro de la ficha; también se agregó un parámetro en el que se indicará la URL con una foto.<br>
-<a href="http://cdn.rawgit.com/fedegonzal/Web-Components/master/para-compartir/elementos-complejos.html">http://cdn.rawgit.com/fedegonzal/Web-Components/master/para-compartir/elementos-complejos.html</a></p>
+<a href="http://rawgit.com/fedegonzal/Web-Components/master/para-compartir/elementos-complejos.html">http://rawgit.com/fedegonzal/Web-Components/master/para-compartir/elementos-complejos.html</a></p>
 
 <p><strong>Ejemplo 3. Cómo iterar datos y generar instancias de componentes</strong></p>
 
 <p>En el ejercicio anterior se generó un componente y se lo iteró manualmente generando una galería de especies. A continuación se muestra un ejemplo similar, pero esta vez la información se obtendrá a partir de una fuente de datos externa en formato JSON. Este es un típico caso de provisión de información mediante APIs REST.<br>
-<a href="http://cdn.rawgit.com/fedegonzal/Web-Components/master/para-compartir/extender-elemento.html">http://cdn.rawgit.com/fedegonzal/Web-Components/master/para-compartir/extender-elemento.html</a></p>
+<a href="http://rawgit.com/fedegonzal/Web-Components/master/para-compartir/extender-elemento.html">http://rawgit.com/fedegonzal/Web-Components/master/para-compartir/extender-elemento.html</a></p>
 
 <p><strong>Ejemplo 4. Cómo extender un elemento nativo</strong></p>
 
 <p>En este ejemplo se demuestra cómo crear un componente a partir del elemento nativo  al que se llamará  y tendrá como particularidad la posibilidad de recibir un ícono acompañando al texto del botón. También se aprovechará la definición del nuevo componente para establecer una serie de estilos CSS que unifiquen este tipo de botones.<br>
-<a href="http://cdn.rawgit.com/fedegonzal/Web-Components/master/para-compartir/iterar-datos.html">http://cdn.rawgit.com/fedegonzal/Web-Components/master/para-compartir/iterar-datos.html</a></p>
+<a href="http://rawgit.com/fedegonzal/Web-Components/master/para-compartir/iterar-datos.html">http://rawgit.com/fedegonzal/Web-Components/master/para-compartir/iterar-datos.html</a></p>
 
 <p><strong>Ejemplo 5. Cómo articular datos entre componentes</strong>  </p>
 
 <p>En este último ejemplo de la tesina se trabajará con dos enfoques diferentes para resolver la comunicación entre componentes.</p>
 
 <p>En el primer caso se ha creado un Web Component al que se llamará  y que tiene en su interior dos componentes: un  nativo y un mapa que utiliza la API de Google gracias al componente  de Polymer. Cuando el usuario modifique el domicilio en el , el mapa cambiará la posición del marcador ubicándose en la nueva dirección postal. Se trata de un claro ejemplo de “vinculación de datos y comunicación dentro de un componente”.<br>
-<a href="http://cdn.rawgit.com/fedegonzal/Web-Components/master/para-compartir/mapa-lugares.html">http://cdn.rawgit.com/fedegonzal/Web-Components/master/para-compartir/mapa-lugares.html</a></p>
+<a href="http://rawgit.com/fedegonzal/Web-Components/master/para-compartir/mapa-lugares.html">http://rawgit.com/fedegonzal/Web-Components/master/para-compartir/mapa-lugares.html</a></p>
 
 <p>El segundo caso va más allá y “dialoga” con otros elementos externos, a lo que se llamará “vinculación de datos y comunicación entre distintos componentes”. Así, se ha creado un componente (independiente del anterior) llamado  que estará “escuchando” cambios en  y mostrará imágenes relativas al lugar indicado.<br>
-<a href="http://cdn.rawgit.com/fedegonzal/Web-Components/master/para-compartir/mapa-lugares-imagenes.html">http://cdn.rawgit.com/fedegonzal/Web-Components/master/para-compartir/mapa-lugares-imagenes.html</a></p>
+<a href="http://rawgit.com/fedegonzal/Web-Components/master/para-compartir/mapa-lugares-imagenes.html">http://rawgit.com/fedegonzal/Web-Components/master/para-compartir/mapa-lugares-imagenes.html</a></p>
+
+<h1>
+<a id="consideraciones-legales" class="anchor" href="#consideraciones-legales" aria-hidden="true"><span class="octicon octicon-link"></span></a>Consideraciones legales</h1>
+
+<p>Este trabajo tiene fines pedagógicos y académicos, toda la información expuesta tanto en el documento como en los códigos de ejemplo puede ser compartida, adaptada y utilizada -incluso comercialmente por terceros- siempre que se respeten las demás licencias que dependen de las librerías vinculadas.</p>
+
+<p>El código está licenciado bajo BSD y la documentación bajo Creative Commons Reconocimiento 4.0 Internacional.</p>
+
+<p>Quien requiera utilizar en su totalidad o en parte a esta tesina, debe citar a su autor e indicar los cambios realizados -en caso de haberlos hecho- mencionando la siguiente información:</p>
+
+<p>Autor: Federico González Brizzio
+Email: <a href="mailto:fedegonzal@gmail.com">fedegonzal@gmail.com</a>
+GitHub: <a href="http://fedegonzal.github.io/Web-Components/">http://fedegonzal.github.io/Web-Components/</a></p>
         </section>
 
         <footer>
