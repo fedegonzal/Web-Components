@@ -1,5 +1,4 @@
-# Web Components, un nuevo estándar para el desarrollo de aplicaciones HTML5  
-# Consideraciones para su implementación
+# Web Components, un nuevo estándar para el desarrollo de aplicaciones HTML5. Consideraciones para su implementación
 
 Tesina de grado, julio 2015
 
