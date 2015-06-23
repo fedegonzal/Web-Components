@@ -1,42 +1,40 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Web Components : Web Components, un nuevo estándar para el desarrollo de aplicaciones HTML5. Consideraciones para su implementación">
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Web Components</title>
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Web Components by fedegonzal</title>
   </head>
 
   <body>
+    <div id="container">
+      <div class="inner">
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/fedegonzal/Web-Components">View on GitHub</a>
-
-          <h1 id="project_title">Web Components</h1>
-          <h2 id="project_tagline">Web Components, un nuevo estándar para el desarrollo de aplicaciones HTML5. Consideraciones para su implementación</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/fedegonzal/Web-Components/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/fedegonzal/Web-Components/tarball/master">Download this project as a tar.gz file</a>
-            </section>
+        <header>
+          <h1>Web Components</h1>
+          <h2>Web Components, un nuevo estándar para el desarrollo de aplicaciones HTML5. Consideraciones para su implementación</h2>
         </header>
-    </div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <p>Tesina de grado, julio 2015</p>
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/fedegonzal/Web-Components/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/fedegonzal/Web-Components/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/fedegonzal/Web-Components" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <p>Tesina de grado, julio 2015</p>
 
 <p><strong>Autor</strong><br>
-Federico González Brizzio<br>
-<a href="mailto:fedegonzal@gmail.com">fedegonzal@gmail.com</a><br>
-<a href="https://twitter.com/fedegonzal">@fedegonzal</a></p>
+Federico González Brizzio  </p>
 
 <p><strong>Director</strong><br>
 Lic. Guillermo Feierherd </p>
@@ -64,20 +62,67 @@ Tierra del Fuego, Argentina</p>
 <ol>
 <li>Descargar o clonar este repositorio</li>
 <li>Iniciar un servidor http (puede funcionar cualquiera)</li>
-<li>Navegar los ejemplos</li>
+<li>Navegar los archivos html de la carpeta "para-compartir"</li>
 </ol>
-      </section>
+
+<h2>
+<a id="probar-los-ejemplos-en-línea" class="anchor" href="#probar-los-ejemplos-en-l%C3%ADnea" aria-hidden="true"><span class="octicon octicon-link"></span></a>Probar los ejemplos en línea</h2>
+
+<p><strong>Ejemplo 1. Cómo recibir parámetros</strong></p>
+
+<p>Se supondrá que se pretende hacer una aplicación para buscar información en una base de datos sobre especies animales en áreas protegidas de Argentina y mostrar los resultados en pantalla, por ejemplo:</p>
+
+<p>Nombre científico: Gastrotheca gracilis<br>
+Nombres locales: Rana marsupial tucumana, La Banderita, Marsupial Frog<br>
+Autor: Laurent, 1969<br>
+Origen: Autóctono  </p>
+
+<p>El Web Component recibirá la información para nombre científico, nombres locales, autor, año y origen como atributos del elemento creado. Se generará una instancia del Web Component por cada especie animal que se quiera mostrar.<br>
+<a href="http://cdn.rawgit.com/fedegonzal/Web-Components/master/para-compartir/como-recibir-parametros.html">http://cdn.rawgit.com/fedegonzal/Web-Components/master/para-compartir/como-recibir-parametros.html</a></p>
+
+<p><strong>Ejemplo 2. Cómo incluir elementos complejos</strong></p>
+
+<p>En esta sección se hará una ligera modificación al ejemplo anterior, suponiendo que es de interés dar mayor flexibilidad a la información contenida en la ficha de especie. En vez de pasar todo el contenido en parámetros, se dejará la libertad de incorporar otros elementos dentro de la ficha; también se agregó un parámetro en el que se indicará la URL con una foto.<br>
+<a href="http://cdn.rawgit.com/fedegonzal/Web-Components/master/para-compartir/elementos-complejos.html">http://cdn.rawgit.com/fedegonzal/Web-Components/master/para-compartir/elementos-complejos.html</a></p>
+
+<p><strong>Ejemplo 3. Cómo iterar datos y generar instancias de componentes</strong></p>
+
+<p>En el ejercicio anterior se generó un componente y se lo iteró manualmente generando una galería de especies. A continuación se muestra un ejemplo similar, pero esta vez la información se obtendrá a partir de una fuente de datos externa en formato JSON. Este es un típico caso de provisión de información mediante APIs REST.<br>
+<a href="http://cdn.rawgit.com/fedegonzal/Web-Components/master/para-compartir/extender-elemento.html">http://cdn.rawgit.com/fedegonzal/Web-Components/master/para-compartir/extender-elemento.html</a></p>
+
+<p><strong>Ejemplo 4. Cómo extender un elemento nativo</strong></p>
+
+<p>En este ejemplo se demuestra cómo crear un componente a partir del elemento nativo  al que se llamará  y tendrá como particularidad la posibilidad de recibir un ícono acompañando al texto del botón. También se aprovechará la definición del nuevo componente para establecer una serie de estilos CSS que unifiquen este tipo de botones.<br>
+<a href="http://cdn.rawgit.com/fedegonzal/Web-Components/master/para-compartir/iterar-datos.html">http://cdn.rawgit.com/fedegonzal/Web-Components/master/para-compartir/iterar-datos.html</a></p>
+
+<p><strong>Ejemplo 5. Cómo articular datos entre componentes</strong>  </p>
+
+<p>En este último ejemplo de la tesina se trabajará con dos enfoques diferentes para resolver la comunicación entre componentes.</p>
+
+<p>En el primer caso se ha creado un Web Component al que se llamará  y que tiene en su interior dos componentes: un  nativo y un mapa que utiliza la API de Google gracias al componente  de Polymer. Cuando el usuario modifique el domicilio en el , el mapa cambiará la posición del marcador ubicándose en la nueva dirección postal. Se trata de un claro ejemplo de “vinculación de datos y comunicación dentro de un componente”.<br>
+<a href="http://cdn.rawgit.com/fedegonzal/Web-Components/master/para-compartir/mapa-lugares.html">http://cdn.rawgit.com/fedegonzal/Web-Components/master/para-compartir/mapa-lugares.html</a></p>
+
+<p>El segundo caso va más allá y “dialoga” con otros elementos externos, a lo que se llamará “vinculación de datos y comunicación entre distintos componentes”. Así, se ha creado un componente (independiente del anterior) llamado  que estará “escuchando” cambios en  y mostrará imágenes relativas al lugar indicado.<br>
+<a href="http://cdn.rawgit.com/fedegonzal/Web-Components/master/para-compartir/mapa-lugares-imagenes.html">http://cdn.rawgit.com/fedegonzal/Web-Components/master/para-compartir/mapa-lugares-imagenes.html</a></p>
+        </section>
+
+        <footer>
+          Web Components is maintained by <a href="https://github.com/fedegonzal">fedegonzal</a><br>
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+                  <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-42117189-2");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+      </div>
     </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Web Components maintained by <a href="https://github.com/fedegonzal">fedegonzal</a></p>
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
   </body>
 </html>
