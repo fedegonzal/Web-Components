@@ -87,6 +87,6 @@ El código está licenciado bajo BSD y la documentación bajo Creative Commons R
 
 Quien requiera utilizar en su totalidad o en parte a esta tesina, debe citar a su autor e indicar los cambios realizados -en caso de haberlos hecho- mencionando la siguiente información:
 
-Autor: Federico González Brizzio
-Email: fedegonzal@gmail.com
-GitHub: http://fedegonzal.github.io/Web-Components/
+Autor: Federico González Brizzio  
+Email: fedegonzal@gmail.com  
+GitHub: http://fedegonzal.github.io/Web-Components/  
