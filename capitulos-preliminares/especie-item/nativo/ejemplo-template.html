@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ejemplo de Template</title>
+</head>
+<body>
+	<main id="resultados">
+	</main>
+
+	<template id="especieItemTemplate">
+	    <article>
+	        <h2>Nombre científico: <em>Gastrotheca gracilis</em></h2>
+	        <p>Nombres locales: Rana marsupial tucumana, La Banderita, Marsupial Frog</p>
+	        <p>Autor: Laurent, 1969</p>
+	        <p>Origen: Autóctono</p>
+	    </article>
+	</template>	
+
+	<script>
+		// Obtenemos el Template
+		var tpl = document.getElementById('especieItemTemplate');
+
+		// Creamos una copia de su contenido
+		var copia = tpl.content.cloneNode(true);
+
+		// Agregamos el contenido dentro de un elemento existente en la página
+		var resultados = document.getElementById('resultados');
+		resultados.appendChild(copia);
+	</script>	
+</body>
+</html>

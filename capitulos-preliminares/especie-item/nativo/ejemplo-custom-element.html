@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Ejemplo de Custom Element</title>
+</head>
+<body>
+
+	<main id="resultados">
+	  <especie-item></especie-item>
+	  <especie-item></especie-item>
+	</main>
+
+	<template id="especieItemTemplate">
+	    <article>
+	        <h2>Nombre científico: <em>Gastrotheca gracilis</em></h2>
+	        <p>Nombres locales: Rana marsupial tucumana, La Banderita, Marsupial Frog</p>
+	        <p>Autor: Laurent, 1969</p>
+	        <p>Origen: Autóctono</p>
+	    </article>
+	</template>
+
+	<script>
+		var especiePrototype = Object.create(HTMLElement.prototype, {
+		  createdCallback: {
+		    value: function() {
+		      var tpl = document.querySelector('#especieItemTemplate');
+		      var copia = document.importNode(tpl.content, true);
+		      this.createShadowRoot().appendChild(copia);
+		    }
+		  }
+		});
+		document.registerElement('especie-item', {prototype: especiePrototype});
+	</script>
+
+</body>
+</html>
